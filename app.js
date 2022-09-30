@@ -49,11 +49,12 @@ function displayLists(lists) {
     shoppingList.innerHtml = '';
 
     for (const list of lists) {
-        const listEl = renderList(list);
-        console.log(listEl);
+        const listEl = document.createElement('li');
+        listEl.textContent = list.item;
+
         shoppingList.append(listEl);
-        return shoppingList;
     }
+    return shoppingList;
 }
 
 function displayError() {
