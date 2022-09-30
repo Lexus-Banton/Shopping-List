@@ -35,4 +35,3 @@ export async function createLists(item) {
 export async function getLists() {
     return await client.from('lists').select('*').order('created_at');
 }
-//git

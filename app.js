@@ -7,7 +7,7 @@ import { createLists } from './fetch-utils.js';
 const addListForm = document.getElementById('add-list-form');
 //const removeButton = document.getElementById('remove-button');
 const errorDisplay = document.getElementById('error-display');
-const shoppingList = document.getElementById('shoppingList');
+const shoppingList = document.getElementById('shopping-list');
 
 /* State */
 let lists = [];
@@ -49,10 +49,10 @@ addListForm.addEventListener('submit', async (e) => {
 function displayLists() {
     shoppingList.innerHtml = '';
 
-    for (const list of lists) {
-        const listEl = renderList(list);
-        shoppingList.append(listEl);
-    }
+    //for (const list of lists) {
+    //const listEl = renderList(list);
+    // shoppingList.append(listEl);
+    // }
 }
 
 function displayError() {

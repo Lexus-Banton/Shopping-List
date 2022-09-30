@@ -2,7 +2,6 @@
     --background: url('https://wallpapercave.com/wp/wp3152235.jpg');
     --background-repeat: no-repeat;
     --header-background: white
-    --text-color: white;
     --label-color: rgb(75, 102, 98);
     --placeholder-color: rgb(136, 136, 153);
     --offset-color: rgb(217, 236, 217);
@@ -23,7 +22,9 @@ body {
     display: grid;
     grid-template-rows: auto 1fr;
     background-repeat: no-repeat;
-    font: white;
+    color: rgb(0, 0, 0);
+    
+    
 
 }
 
@@ -81,5 +82,8 @@ main {
     width:500px;
     height:1000px;
     background:white;
-    position: center;
+    position: fixed; /* or absolute */
+    top: 5%;
+    left: 35%;
 }
+.
