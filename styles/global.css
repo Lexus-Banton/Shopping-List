@@ -1,7 +1,8 @@
 :root {
-    --background: rgb(224, 234, 247);
-    --header-background: white;
-    --text-color: rgb(7, 5, 68);
+    --background: url('https://wallpapercave.com/wp/wp3152235.jpg');
+    --background-repeat: no-repeat;
+    --header-background: white
+    --text-color: white;
     --label-color: rgb(75, 102, 98);
     --placeholder-color: rgb(136, 136, 153);
     --offset-color: rgb(217, 236, 217);
@@ -16,8 +17,14 @@ body {
     font-family: var(--primary-font);
     color: var(--text-color);
     background: var(--background);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: grid;
     grid-template-rows: auto 1fr;
+    background-repeat: no-repeat;
+    font: white;
+
 }
 
 .page-header {
@@ -68,4 +75,11 @@ main {
 
 .hidden {
     display: none;
+}
+
+#rectangle{
+    width:500px;
+    height:1000px;
+    background:white;
+    position: center;
 }

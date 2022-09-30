@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>Supabase Web App</title>
-        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <title>Shopping List app</title>
+        <link rel="icon" type="image/x-icon" href="/assets/milk1.png" />
 
         <!-- js -->
         <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -30,14 +30,31 @@
 
     <body>
         <header class="page-header">
-            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="title">Shopping list/p></p>
+            <img class="logo" src="/assets/milk2.png" alt="logo" />
+            <p class="title">Shopping list</p>
             <nav>
                 <a href="/">Home</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
 
-        <main></main>
+        <main>
+            <form id="add-list-form">
+                <input name="description" required placeholder="What are we buying?" />
+                <button>ʚ🍓ɞ</button>
+            </form>
+
+            <div class="container">
+                <button id=" remove-button">Done Shopping (clear list)🧋</button>
+                <p id="error-display" class="error"></p>
+            </div>
+
+            <div id="rectangle"></div>
+
+            <div class="container">
+                <p>Click once item found</p>
+                <ul id="Shopping-list"></ul>
+            </div>
+        </main>
     </body>
 </html>
