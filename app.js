@@ -2,7 +2,6 @@
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 import { createLists, getLists } from './fetch-utils.js';
-import { renderList } from './render-utils.js';
 
 /* Get DOM Elements */
 const addListForm = document.getElementById('add-list-form');
