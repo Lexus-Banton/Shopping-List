@@ -1,7 +1,8 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createLists, getLists } from './fetch-utils.js';
+import { createLists } from './fetch-utils.js';
+import { renderList } from './render-utils.js';
 
 /* Get DOM Elements */
 const addListForm = document.getElementById('add-list-form');
@@ -13,22 +14,11 @@ let lists = [];
 let error = null;
 
 /* Events */
-window.addEventListener('load', async () => {
-    const response = await getLists();
-    error = response.error;
-    lists = response.data;
-    if (error) {
-        displayError();
-    }
-    if (lists) {
-        displayLists(lists);
-    }
-});
 
 addListForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(addListForm);
-    const newList = { item: formData.get('description') };
+    const newList = { item: formData.get('item'), quantity: formData.get('quantity') };
 
     const response = await createLists(newList);
     error = response.error;
@@ -44,16 +34,14 @@ addListForm.addEventListener('submit', async (e) => {
 });
 
 /* Display Functions */
-function displayLists(lists) {
+function displayLists() {
     shoppingList.innerHtml = '';
 
     for (const list of lists) {
-        const listEl = document.createElement('li');
-        listEl.textContent = list.item;
+        const listEl = renderList(list);
 
         shoppingList.append(listEl);
     }
-    return shoppingList;
 }
 
 function displayError() {

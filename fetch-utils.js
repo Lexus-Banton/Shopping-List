@@ -1,6 +1,6 @@
-const SUPABASE_URL = 'https://qvhrjswtuaxdusdfevmt.supabase.co';
+const SUPABASE_URL = 'https://sgsqhdtlconmltdgcqzd.supabase.co';
 const SUPABASE_KEY =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2aHJqc3d0dWF4ZHVzZGZldm10Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQ0ODQ1MjAsImV4cCI6MTk4MDA2MDUyMH0.JgHTmXXsZb8eN6QRS77uzbmXFUAddB-3P78OpMalu4k';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNnc3FoZHRsY29ubWx0ZGdjcXpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjUwODAzNzMsImV4cCI6MTk4MDY1NjM3M30.nIbCKve45Pb2NvJSQTpQlTkkQ2S8mpK6Ull7zd4lNQg';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
@@ -29,9 +29,9 @@ export async function signOutUser() {
 
 /* Data functions */
 export async function createLists(item) {
-    return await client.from('lists').insert(item).single();
+    return await client.from('shopping_list').insert(item).single();
 }
 
 export async function getLists() {
-    return await client.from('lists').select('*').order('created_at');
+    return await client.from('shopping_list').select('*').order('created_at');
 }
