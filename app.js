@@ -1,7 +1,7 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createLists, getLists } from './fetch-utils.js';
+import { createLists, getLists, boughtItem } from './fetch-utils.js';
 import { renderList } from './render-utils.js';
 
 /* Get DOM Elements */
@@ -47,12 +47,26 @@ addListForm.addEventListener('submit', async (e) => {
 
 /* Display Functions */
 function displayLists() {
-    shoppingList.innerHtml = '';
+    shoppingList.innerHTML = '';
 
     for (const list of lists) {
         const listEl = renderList(list);
 
         shoppingList.append(listEl);
+
+        listEl.addEventListener('click', async () => {
+            const response = await boughtItem(list.id);
+            error = response.error;
+            const boughtListItem = response.data;
+
+            if (error) {
+                displayError();
+            } else {
+                const index = lists.indexOf(list);
+                lists[index] = boughtListItem;
+                displayLists();
+            }
+        });
     }
 }
 

@@ -67,3 +67,10 @@ form button:disabled {
     display: grid;
     background-color: bisque;
 }
+li.bought {
+    text-decoration: line-through;
+}
+
+ul {
+    background-color: bisque;
+}
